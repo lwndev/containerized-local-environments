@@ -1,0 +1,35 @@
+services:
+  # Node.js development environment
+  node-dev:
+    image: node:20-alpine
+    volumes:
+      - ./node-projects:/app
+    working_dir: /app
+    ports:
+      - "3000:3000"
+    command: >
+      sh -c "echo 'Node.js container is running. Connect with: docker exec -it node-dev sh' && 
+      tail -f /dev/null"
+
+  # Python development environment
+  python-dev:
+    image: python:3.12-slim
+    volumes:
+      - ./python-projects:/app
+    working_dir: /app
+    ports:
+      - "8000:8000"
+    command: >
+      sh -c "echo 'Python container is running. Connect with: docker exec -it python-dev bash' && 
+      tail -f /dev/null"
+
+  # PHP development environment
+  php-dev:
+    image: php:8.2-apache
+    volumes:
+      - ./php-projects:/var/www/html
+    ports:
+      - "8080:80"
+    command: >
+      sh -c "echo 'PHP container is running. Access via http://localhost:8080' && 
+      apache2-foreground" 

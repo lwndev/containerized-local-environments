@@ -1,0 +1,10 @@
+# Project Folders
+node-projects/
+php-projects/
+python-projects/
+
+# Docker Compose Files
+docker-compose.yml
+docker-compose.override.yml
+docker-compose.override.yml
+docker-compose.override.yml
