@@ -5,7 +5,7 @@ This setup allows you to develop with Node.js, Python, and PHP without installin
 ## Prerequisites
 
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and running (version 20.10.0 or higher)
-- [Cursor IDE](https://cursor.sh/) or any other code editor
+- Any code editor or IDE of your choice
 
 ## Directory Structure
 
@@ -80,10 +80,10 @@ If you encounter any issues:
 ./dev-env.sh logs php-dev
 ```
 
-## Development Workflow with Cursor
+## Development Workflow
 
 1. Start the containers using `./dev-env.sh start`
-2. Open your project folder in Cursor
+2. Open your project folder in your preferred code editor or IDE
 3. Edit files locally - changes are automatically synced to the container
 4. Run commands in the container using `./dev-env.sh shell <service>`
 5. Access web applications:
