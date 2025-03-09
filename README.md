@@ -1,6 +1,6 @@
 # Containerized Development Environment
 
-This setup allows you to develop with Node.js, Python, and PHP without installing these languages directly on your host machine. Instead, Docker containers are used to provide isolated development environments.
+This setup allows you to develop with Node.js, Python, and PHP without installing these languages directly on your host machine. Instead, Docker containers are used to provide isolated development environments. I created this after looking for options that I can use for IDEs like Cursor, or if I'm not using an IDE at all. Full disclosure, this was created with the assistance of Cursor and Claude 3.7 Sonnet.
 
 ## Prerequisites
 
