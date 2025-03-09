@@ -89,4 +89,85 @@ The script will automatically detect your shell type and provide the correct ins
 
 ### Accessing Container Shells
 
+```bash
+# Open a shell in the Node.js container
+./dev-env.sh shell node-dev
+
+# Open a shell in the Python container
+./dev-env.sh shell python-dev
+
+# Open a shell in the PHP container
+./dev-env.sh shell php-dev
 ```
+
+### Viewing Container Logs
+
+```bash
+# View logs for all containers
+./dev-env.sh logs
+
+# View logs for a specific container
+./dev-env.sh logs php-dev
+```
+
+## Development Workflow
+
+1. Start the containers using `./dev-env.sh start`
+2. Open your project folder in your preferred code editor or IDE
+3. Edit files locally - changes are automatically synced to the container
+4. Run commands in the container using `./dev-env.sh shell <service>`
+5. Access web applications:
+   - Node.js: http://localhost:3000
+   - Python: http://localhost:8000
+   - PHP: http://localhost:8080
+
+## Example: Creating a Node.js Project
+
+```bash
+# Start the Node.js container
+./dev-env.sh start node-dev
+
+# Open a shell in the container
+./dev-env.sh shell node-dev
+
+# Inside the container shell:
+mkdir my-node-app
+cd my-node-app
+npm init -y
+npm install express
+echo 'console.log("Hello from containerized Node.js!");' > index.js
+node index.js
+```
+
+## Example: Creating a Python Project
+
+```bash
+# Start the Python container
+./dev-env.sh start python-dev
+
+# Open a shell in the container
+./dev-env.sh shell python-dev
+
+# Inside the container shell:
+mkdir my-python-app
+cd my-python-app
+pip install flask
+echo 'print("Hello from containerized Python!")' > app.py
+python app.py
+```
+
+## Example: Creating a PHP Project
+
+```bash
+# Start the PHP container
+./dev-env.sh start php-dev
+
+# Create a PHP file in the php-projects directory
+echo '<?php echo "Hello from containerized PHP!"; ?>' > php-projects/index.php
+
+# Access it at http://localhost:8080/index.php
+```
+
+## Customizing Containers
+
+To customize the containers (add extensions, install additional tools, etc.), edit the `docker-compose.dev.yml` file. 
