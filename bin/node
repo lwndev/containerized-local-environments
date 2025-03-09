@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Get the current directory name for container prefix
+DIRNAME=$(cd "$(dirname "$(dirname "${BASH_SOURCE[0]}")")" && basename "$PWD" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-zA-Z0-9]/-/g')
+
+# Check if container is running
+if ! docker ps | grep -q "${DIRNAME}-node-dev-1"; then
+  echo "Error: Node.js container is not running. Start it with: ./dev-env.sh start node-dev"
+  exit 1
+fi
+
+# Forward the command to the container
+docker exec -i "${DIRNAME}-node-dev-1" node "$@" 
